@@ -1,9 +1,14 @@
 package com.simplearrayprogram;
 
-public class PrintArray<T> {
-    T[] myArray;
-    public PrintArray(T[] myArray){
-        this.myArray = myArray;
+public class PrintArray<X, Y, Z> {
+    X[] myXArray;
+    Y[] myYArray;
+    Z[] myZArray;
+
+    public PrintArray(X[] myXArray, Y[] myYArray, Z[] myZArray){
+        this.myXArray= myXArray;
+        this.myYArray = myYArray;
+        this.myZArray = myZArray;
     }
 
     public static void main(String[] args){
@@ -11,14 +16,14 @@ public class PrintArray<T> {
         Double[] doubleArray = { 1.1 , 2.2 , 3.3 , 4.4};
         Character[] CharArray = {'H','E','L','L','O'};
 
-        new PrintArray<Integer>(intArray).toPrint();
-        new PrintArray<Double>(doubleArray).toPrint();
-        new PrintArray<Character>(CharArray).toPrint();
+        new PrintArray<Integer , Double,Character>(intArray,doubleArray,CharArray).toPrint();
 
     }
 
     private void toPrint() {
-        toPrint(this.myArray);
+        toPrint(this.myXArray);
+        toPrint(this.myYArray);
+        toPrint(this.myZArray);
     }
 
     public static <E> void toPrint(E[] inputArray){
